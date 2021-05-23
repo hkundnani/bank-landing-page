@@ -61,7 +61,12 @@ a:hover {
 
 /* header */
 
+.header {
+  position: relative;
+}
+
 .header nav {
+  position: relative;
   padding: 1.0625rem 1.5rem;
 }
 
@@ -70,10 +75,24 @@ a:hover {
   width: 26px;
   height: 2px;
   background-color: var(--darkBlue);
+  transition: all 300ms ease-in-out;
+  transform-origin: 3px 1px;
 }
 
 .header .header__menu > span:not(:last-child) {
-  margin-bottom: 3px;
+  margin-bottom: 5px;
+}
+
+.header.open .header__menu > span:first-child {
+  transform: rotate(45deg);
+}
+
+.header.open .header__menu > span:nth-child(2) {
+  opacity: 0;
+}
+
+.header.open .header__menu > span:last-child {
+  transform: rotate(-45deg);
 }
 
 .header .header__links a {
@@ -121,6 +140,17 @@ a:hover {
   opacity: 0.75;
 }
 
+/* overlay */
+.header .overlay {
+  opacity: 0;
+  position: fixed;
+  top: 3.825rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(var(--darkBlue), transparent);
+}
+
 /* Button */
 button,
 .button {
@@ -144,4 +174,42 @@ button,
   .hide-for-mobile {
     display: none;
   }
+}
+
+/* animations */
+@keyframes fade-in {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  1% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+  99% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.fade-in {
+  animation: fade-in 300ms ease-in-out forwards;
+}
+
+.fade-out {
+  animation: fade-out 300ms ease-in-out forwards;
 }
