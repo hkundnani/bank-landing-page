@@ -23,12 +23,12 @@
   </head>
   <body>
     <header class="header">
-      <div class="overlay"></div>
-      <nav class="flex flex-jc-sb flex-ai-c">
+      <div class="overlay has-fade"></div>
+      <nav class="flex flex-jc-sb flex-ai-c container">
         <a href="/" class="header__logo">
           <img src="images/logo.svg" alt="Easybank" />
         </a>
-        <a href="#" id="btnMenu" class="header__menu hide-for-desktop">
+        <a href="#" id="btnMenu" class="header__toggle hide-for-desktop">
           <span></span>
           <span></span>
           <span></span>
@@ -42,6 +42,9 @@
         </div>
         <button type="button" class="header__cta hide-for-mobile">Request Invite</button>
       </nav>
+      <div class="header__menu has-fade">
+        <a href="#">Home</a><a href="#">About</a><a href="#">Contact</a><a href="#">Blog</a><a href="#">Careers</a>
+      </div>
     </header>
     Next generation digital banking Take your financial life online. Your Easybank account will be a one-stop-shop for
     spending, saving, budgeting, investing, and much more. Request Invite Why choose Easybank? We leverage Open Banking
